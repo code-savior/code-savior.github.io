@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flower</title>
+  <title>KandaoPlayer Demo</title>
+  <script src="./eruda.js"></script>
+  <script>eruda.init()</script>
 </head>
-<body style="margin: 0;overflow: hidden;">
-  <div style="display: flex;justify-content: center;align-items: center; width: 100vw;height: 100vh;">
-    <img style="width: 350px;" src="flower.svg" alt="">
+<body>
+  <h3>gyroAutoPlay on demo:↘</h3>
+  <div id="gyroAutoPlay" style="width: 500px; height: 300px;">
   </div>
+
+  <h3>gyroAutoPlay on with banner demo:↘</h3>
+  <!-- show banner when the data-banner attr defined -->
+  <div id="gyroAutoPlay_banner" style="width: 500px; height: 300px;"
+    data-banner_pc="./assets/banner_pc.jpg"
+    data-banner_mobile="./assets/banner_mobile.jpg">
+  </div>
+
+  <h3>gyroAutoPlay off demo:↘</h3>
+  <div id="gyroAutoPlay_off" style="width: 500px; height: 300px;">
+  </div>
+
+  <script src="./kandaoplayer-1.0.6.js"></script>
+  <script>
+    const gyroAutoPlay_player = new KandaoPlayer('gyroAutoPlay', './assets/MaryOculus.mp4', {fov: 360, widgets:{vr: true, gyroAutoPlay: 'on'}, stereo: 'h', video: {autoplay: true, loop: true}});
+    const gyroAutoPlay_banner_player = new KandaoPlayer('gyroAutoPlay_banner', './assets/MaryOculus.mp4', {fov: 360, widgets:{vr: true, gyroAutoPlay: 'on'}, stereo: 'h', video: {autoplay: true, loop: true}});
+    const gyroAutoPlay_off_player = new KandaoPlayer('gyroAutoPlay_off', './assets/MaryOculus.mp4', {fov: 360, widgets:{vr: true, gyroAutoPlay: 'off'}, stereo: 'h', video: {autoplay: true, loop: true}});
+  </script>
 </body>
 </html>
